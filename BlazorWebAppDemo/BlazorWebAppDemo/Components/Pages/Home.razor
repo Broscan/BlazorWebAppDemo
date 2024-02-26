@@ -1,0 +1,31 @@
+﻿@page "/"
+@using Shared
+
+<PageTitle>Home</PageTitle>
+
+<div class="row">
+
+    @foreach (HamburgerModel hambModel in Hamburgers)
+    {
+        <div class="col-3">
+            <div class="card">
+                <img src="@hambModel.ImageUrl" alt="Placeholder Image">
+                <div class="card-body">
+                    <h5 class="card-title">@hambModel.Name</h5>
+                    <p class="card-text">@hambModel.Description</p>
+                    <a class="btn btn-primary">Go to Hamburger</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+@code {
+    public List<HamburgerModel>? Hamburgers { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+
+    }
+}
